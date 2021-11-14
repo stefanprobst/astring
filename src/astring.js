@@ -256,6 +256,7 @@ export const GENERATOR = {
         formatComments(state, statement.comments, indent, lineEnd)
       }
       state.write(indent)
+      if (!Object.prototype.hasOwnProperty.call(this, statement.type)) continue;
       this[statement.type](statement, state)
       state.write(lineEnd)
     }
